@@ -1,0 +1,41 @@
+@startuml
+package "Forum-Online" {
+
+    package "Frontend" {
+        class "Templates (HTML, Jinja)"
+        class "Static Files (CSS, JS)"
+    }
+
+    package "Backend" {
+        package "API" {
+            class "Views"
+            class "Serializers"
+        }
+        
+        package "Core" {
+            class "Models"
+            class "Controllers"
+        }
+        
+        package "Services" {
+            class "VoteService"
+            class "NotificationService"
+        }
+    }
+
+    package "Base de Données" {
+        class "PostgreSQL"
+    }
+
+    package "Sécurité & Authentification" {
+        class "DjangoAuth"
+        class "JWT"
+    }
+
+    "Frontend" --> "Backend" : "Requêtes HTTP"
+    "Backend" --> "Base de Données" : "ORM Django"
+    "Backend" --> "Sécurité & Authentification" : "Gestion des utilisateurs"
+    "API" --> "Core" : "Utilise les modèles"
+    "Services" --> "Core" : "Utilise les fonctionnalités métier"
+}
+@enduml

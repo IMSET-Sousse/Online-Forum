@@ -1,0 +1,56 @@
+@startuml
+class Utilisateur {
+    - id: int
+    - email: string
+    - mot_de_passe: string
+    - role: string
+    - avatar: string
+    - bio: string
+    + sInscrire()
+    + seConnecter()
+    + modifierProfil()
+}
+
+class Sujet {
+    - id: int
+    - titre: string
+    - contenu: text
+    - auteur: Utilisateur
+    - date: datetime
+    - votes: int
+    + creerSujet()
+    + modifierSujet()
+    + supprimerSujet()
+}
+
+class Commentaire {
+    - id: int
+    - contenu: text
+    - auteur: Utilisateur
+    - sujet: Sujet
+    - votes: int
+    + ajouterCommentaire()
+    + modifierCommentaire()
+    + supprimerCommentaire()
+}
+
+class Vote {
+    - utilisateur: Utilisateur
+    - type: string (up/down)
+    - cible: Sujet | Commentaire
+    + voter()
+}
+
+class Signalement {
+    - contenu: text
+    - raison: string
+    - modérateur: Utilisateur
+    + traiterSignalement()
+}
+
+Utilisateur "1" -- "0..*" Sujet : "auteur"
+Utilisateur "1" -- "0..*" Commentaire : "auteur"
+Sujet "1" -- "0..*" Commentaire : "possède"
+Utilisateur "1" -- "0..*" Vote : "effectue"
+Utilisateur "1" -- "0..*" Signalement : "signale"
+@enduml
