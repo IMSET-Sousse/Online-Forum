@@ -1,0 +1,12 @@
+@startuml
+actor Utilisateur
+participant "Interface Web" as UI
+participant "Serveur Django" as Backend
+participant "Base de données PostgreSQL" as DB
+
+Utilisateur -> UI : Remplit le formulaire de création de sujet
+UI -> Backend : Envoie les données du sujet
+Backend -> DB : Insère le sujet dans la base
+DB --> Backend : Confirmation d'insertion
+Backend --> UI : Affiche le sujet créé
+@enduml

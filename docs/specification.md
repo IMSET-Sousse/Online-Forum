@@ -1,7 +1,7 @@
 #specification
 ##Forum-Online
 📝 **Description**
-ForumX est une plateforme de discussion où les utilisateurs peuvent créer et répondre à des sujets, voter sur les publications et interagir à travers des commentaires imbriqués. L'objectif est de fournir un espace interactif et structuré pour échanger des idées sur divers sujets, avec des outils de modération pour maintenir la qualité des discussions.
+Forum-online est une plateforme de discussion où les utilisateurs peuvent créer et répondre à des sujets, voter sur les publications et interagir à travers des commentaires imbriqués. L'objectif est de fournir un espace interactif et structuré pour échanger des idées sur divers sujets, avec des outils de modération pour maintenir la qualité des discussions.
 
 🔎**Étude des Concurrents**
 1. Reddit

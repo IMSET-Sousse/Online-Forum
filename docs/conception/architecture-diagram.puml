@@ -1,0 +1,27 @@
+@startuml
+node "Utilisateur" {
+    [Navigateur Web]  
+}
+
+node "Serveur Web" {
+    [Django Backend]
+    [Django Templates]
+    [Django REST API]
+}
+
+node "Base de Données" {
+    [PostgreSQL]
+}
+
+node "Serveur" {
+    [NGINX]
+    [Gunicorn]
+}
+
+[Navigateur Web] --> [Django Backend] : Requête HTTP (GET/POST)
+[Django Backend] --> [PostgreSQL] : Requête SQL (CRUD)
+[Django Backend] --> [Django Templates] : Génération HTML
+[Django REST API] --> [Navigateur Web] : JSON Response
+[NGINX] --> [Django Backend] : Proxy Web
+[Gunicorn] --> [Django Backend] : Exécution Application
+@enduml
