@@ -1,0 +1,22 @@
+@startuml
+actor Utilisateur
+actor Moderateur
+actor Administrateur
+
+rectangle "Forum-Online" {
+    Utilisateur --> (S'inscrire)
+    Utilisateur --> (Se connecter)
+    Utilisateur --> (Créer un sujet)
+    Utilisateur --> (Commenter)
+    Utilisateur --> (Voter sur un sujet/commentaire)
+    Utilisateur --> (Modifier son profil)
+    
+    Moderateur --> (Modérer les commentaires)
+    Moderateur --> (Gérer les signalements)
+    Moderateur --> (Bannir un utilisateur)
+    
+    Administrateur --> (Gérer les utilisateurs)
+    Administrateur --> (Gérer les permissions)
+    Administrateur --> (Configurer les catégories)
+}
+@enduml
